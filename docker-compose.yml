@@ -1,0 +1,39 @@
+# version: '2'
+# services:
+#   server:
+#     build:
+#       context: .
+#     volumes:
+#       - . :/usr/app
+#       - /usr/app/node_modules
+#     ports:
+#       - "3000:3000"
+#     # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
+#     # environment:
+#     #   - NODE_ENV=development
+#     #   - CHOKIDAR_USEPOLLING=true
+#   # client:
+#   #   build:
+#   #     context: ./client/
+#   #   command: npm start
+#   #   volumes:
+#   #     - ./client/:/usr/app
+#   #     - /usr/app/node_modules
+#   #   depends_on:
+#   #     - server
+#   #   ports:
+#   #     - "3000:3000"
+
+
+version: '3'
+services:
+  react-ui:
+      build:
+        context: ./gitpod-react
+      ports:
+        - "3000:3000"
+      container_name: gitpod-react-ui
+      stdin_open: true
+      volumes:
+        - ./gitpod-react:/usr/src/app/gitpod-react
+        - /usr/src/app/gitpod-react/node_modules
