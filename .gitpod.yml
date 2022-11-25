@@ -1,0 +1,8 @@
+tasks:
+  - name: UCI Server
+    init: bash ./installv2.gitpod.sh
+
+
+ports:
+  - port: 8080
+    onOpen: public
