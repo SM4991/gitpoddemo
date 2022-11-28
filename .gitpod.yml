@@ -1,5 +1,5 @@
 tasks:
-  - name: Gitpod
+  - name: GitTest
     init: bash ./install.gitpod.sh
 
 ports:
