@@ -2,6 +2,6 @@ tasks:
   - name: GitTest
     init: bash ./install.gitpod.sh
 
-ports:
-  - port: 8080
-    onOpen: public
+# ports:
+#   - port: 8080
+#     onOpen: public
