@@ -1,5 +1,5 @@
 tasks:
-  - name: UCI Server
+  - name: Gitpod
     init: bash ./installv2.gitpod.sh
 
 
