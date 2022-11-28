@@ -1,40 +1,29 @@
-# version: '2'
-# services:
-#   server:
-#     build:
-#       context: .
-#     volumes:
-#       - . :/usr/app
-#       - /usr/app/node_modules
-#     ports:
-#       - "3000:3000"
-#     # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
-#     # environment:
-#     #   - NODE_ENV=development
-#     #   - CHOKIDAR_USEPOLLING=true
-#   # client:
-#   #   build:
-#   #     context: ./client/
-#   #   command: npm start
-#   #   volumes:
-#   #     - ./client/:/usr/app
-#   #     - /usr/app/node_modules
-#   #   depends_on:
-#   #     - server
-#   #   ports:
-#   #     - "3000:3000"
-
-
 version: '3.8'
-
 services:
-  app:
-    container_name: app-dev
-    image: app-dev
+  # app:
+  #   container_name: app-dev
+  #   image: app-dev
+  #   build:
+  #     context: ./gitpod-react
+  #     target: development
+  #   volumes:
+  #     - ./gitpod-react/src:/app/src
+  #   ports:
+  #     - 3000:3000
+
+  backend:
     build:
-      context: ./gitpod-react
+      context: ./springboot-demo
+      dockerfile: Dockerfile
       target: development
-    volumes:
-      - ./gitpod-react/src:/app/src
+    restart: always
+    container_name: springboot-gitpod-demo
     ports:
-      - 3000:3000
+      - 8080:8080
+    volumes:
+      - springboot-demo:/home/app
+        
+
+volumes:
+  springboot-demo:
+    external: false
