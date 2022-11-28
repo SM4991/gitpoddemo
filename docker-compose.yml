@@ -25,15 +25,16 @@
 #   #     - "3000:3000"
 
 
-version: '3'
+version: '3.8'
+
 services:
-  react-ui:
-      build:
-        context: ./gitpod-react
-      ports:
-        - "3000:3000"
-      container_name: gitpod-react-ui
-      stdin_open: true
-      volumes:
-        - ./gitpod-react:/usr/src/app/gitpod-react
-        - /usr/src/app/gitpod-react/node_modules
+  app:
+    container_name: app-dev
+    image: app-dev
+    build:
+      context: ./gitpod-react
+      target: development
+    volumes:
+      - ./gitpod-react/src:/app/src
+    ports:
+      - 3000:3000

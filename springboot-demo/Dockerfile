@@ -4,6 +4,6 @@ ENV HOME=/home/app
 RUN mkdir -p $HOME
 WORKDIR $HOME
 RUN mvn clean install -DskipTests
-COPY target/XML-DSign-0.0.1-SNAPSHOT.jar app.jar
+COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]

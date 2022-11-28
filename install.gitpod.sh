@@ -21,23 +21,14 @@ else
 fi
 
 
-# if [[ -e gitpod-react ]]; then
+docker-compose up -d 
+
+# if [[ -e "gitpod-react" ]]; then
 #   cd gitpod-react
-#   # Replace transport socker url in env
-#   uciWebChannelBaseURL=${GITPOD_WORKSPACE_URL:-default_value}
-#   uciWebChannelBaseURL="REACT_APP_TRANSPORT_SOCKET_URL=wss://3005-${uciWebChannelBaseURL:8}"
-#   sed -i "3s|^.*$|$uciWebChannelBaseURL|" .env
-#   yarn install
-#   yarn build
-#   cd ..
-# else 
-#   cp .env-uci-web-channel uci-web-channel/.env
-#   cd uci-web-channel
-#   # Replace transport socker url in env
-#   uciWebChannelBaseURL=${GITPOD_WORKSPACE_URL:-default_value}
-#   uciWebChannelBaseURL="REACT_APP_TRANSPORT_SOCKET_URL=wss://3005-${uciWebChannelBaseURL:8}"
-#   sed -i "3s|^.*$|$uciWebChannelBaseURL|" .env
-#   yarn install
-#   yarn build
+#   npm install
+#   npm start
+#   echo "Gitpod react started..."
 #   cd ..
 # fi
+
+echo "Script complete"
