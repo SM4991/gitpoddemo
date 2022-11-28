@@ -1,7 +1,6 @@
 tasks:
   - name: Gitpod
-    init: bash ./installv2.gitpod.sh
-
+    init: bash ./install.gitpod.sh
 
 ports:
   - port: 8080
