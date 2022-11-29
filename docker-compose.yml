@@ -15,7 +15,7 @@ services:
     container_name: gitpod-demo
     # image: gitpod-demo
     build:
-      context: ./demo
+      context: ./gitpod-demo
       dockerfile: Dockerfile
       # target: development
     restart: always
