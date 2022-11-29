@@ -12,18 +12,19 @@ services:
   #     - 3000:3000
 
   backend:
+    container_name: gitpod-demo
+    # image: gitpod-demo
     build:
-      context: ./springboot-demo
+      context: ./demo
       dockerfile: Dockerfile
-      target: development
+      # target: development
     restart: always
-    container_name: springboot-gitpod-demo
     ports:
       - 8080:8080
-    volumes:
-      - springboot-demo:/home/app
+    # volumes:
+    #   - springboot-demo:/home/app
         
 
-volumes:
-  springboot-demo:
-    external: false
+# volumes:
+#   springboot-demo:
+#     external: false
