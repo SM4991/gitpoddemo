@@ -21,6 +21,17 @@ else
 fi
 
 
+# if [[ -e gitpod-demo ]]; then
+#   cd gitpod-demo
+#   mvn clean install
+#   echo "Gitpod demo mvn clean installed..."
+#   cd ..
+# fi
+
+
+sudo apt-get update -y
+sudo apt-get install maven -y
+cd gitpod-demo && mvn clean install -DskipTests
 docker-compose up -d 
 
 # if [[ -e "gitpod-react" ]]; then
@@ -31,4 +42,4 @@ docker-compose up -d
 #   cd ..
 # fi
 
-echo "Script complete"
+# echo "Script complete"

@@ -11,7 +11,7 @@
 
 
 FROM openjdk:11
-RUN mvn clean install -DskipTests
+# RUN mvn clean install -DskipTests
 COPY target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app.jar"]
